@@ -8,6 +8,8 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.*;
 
+import java.util.Optional;
+
 public class AppTest {
 
     App mApp;
@@ -15,14 +17,14 @@ public class AppTest {
     @Before
     public void Setup()
     {
-        mApp = new App( 0 );
+        mApp = new App();
     }
 
     @Test
-    public void multiplicationOfZeroIntegereShouldReturnZero() {
-        assertEquals(  "max of 5 and 10 is 10", 10, mApp.max(5, 10) );
-        assertEquals(  "max of -3 and 0 is 0", 0, mApp.max(-3, 0) );
-        assertEquals( "max of -3 and -5 is -3", -3, mApp.max(-3, -5) );
+    public void maxTest() {
+        assertEquals(  "max of 5 and 10 is 10", Optional.of(10).get(), mApp.max(5, 10) );
+        assertEquals(  "max of -3 and 0 is 0", Optional.of(0).get(), mApp.max(-3, 0) );
+        assertEquals( "max of -3 and -5 is -3", Optional.of(-3).get(), mApp.max(-3, -5) );
     }
 
 

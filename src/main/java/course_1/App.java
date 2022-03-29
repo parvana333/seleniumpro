@@ -3,43 +3,14 @@
  */
 package course_1;
 
+import java.util.Optional;
+
 public class App {
 
-    public App()
-    {
-    }
+    public Integer max(Integer a ,Integer b){
+       if(a!=null && b!=null) return a>b ? a:b;
+       throw new ArithmeticException("We can not compare null value");
 
-    public App(int aNumber)
-    {
-        mNumber = aNumber;
     }
-
-    public App(boolean aWait) throws InterruptedException
-    {
-        if( aWait )
-        {
-            wait( 3000 );
-        }
-    }
-    
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
-    public static void main(String[] args) {
-        callNavi(" This is a Java app built with VSCode! ");
-    }
-
-    public static void callNavi(String aMessage) {
-        System.out.println( "LISTEN! " + aMessage );
-    }
-
-    public int multiply(int aLeft, int aRight)
-    {
-        return mNumber * aLeft;
-    }
-    
-    int mNumber;
-
 
 }
