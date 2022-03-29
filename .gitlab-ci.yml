@@ -1,4 +1,4 @@
-say_hi_for_testers:
+simple test:
   stage: test
   image: gradle
   script:
