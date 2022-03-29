@@ -1,14 +1,6 @@
 say_hi_for_testers:
   stage: test
+  image: gradle
   script:
-    - echo "Hello World!"
+    - gradle test
 
-say_hi_for_builders:
-  stage: build
-  script:
-    - echo "Hello World!"
-
-say_hi_for_deploy:
-  stage: deploy
-  script:
-    - echo "Hello World!"
