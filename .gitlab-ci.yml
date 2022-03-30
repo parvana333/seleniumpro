@@ -4,7 +4,7 @@ simple test:
   script:
     - gradle test
   artifacts:
-       path:
+       paths:
          -build/reports/jacoco/test/html
        expire_in: 1 week
 
