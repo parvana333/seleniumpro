@@ -3,4 +3,8 @@ simple test:
   image: gradle
   script:
     - gradle test
+  artifacts:
+       path:
+         -build/reports/jacoco/test/html
+       expire_in: 1 week
 

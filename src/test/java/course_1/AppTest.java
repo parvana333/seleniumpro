@@ -25,6 +25,12 @@ public class AppTest {
         assertEquals(  "max of 5 and 10 is 10", Optional.of(10).get(), mApp.max(5, 10) );
         assertEquals(  "max of -3 and 0 is 0", Optional.of(0).get(), mApp.max(-3, 0) );
         assertEquals( "max of -3 and -5 is -3", Optional.of(-3).get(), mApp.max(-3, -5) );
+        assertEquals( "max of 13 and 13 is 13", Optional.of(13).get(), mApp.max(13, 13) );
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void maxExceptionTest(){
+        mApp.max(null,5);
     }
 
 
