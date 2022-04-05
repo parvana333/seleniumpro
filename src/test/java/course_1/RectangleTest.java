@@ -70,5 +70,14 @@ public class RectangleTest {
         assertEquals(6,new Rectangle(5,6).getB());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).getB());
     }
-
+    @Test
+    public void testSetA(){
+        rectangle.setA(12);
+        assertEquals(12,rectangle.a);
+    }
+    @Test
+    public void testSetB(){
+        rectangle.setA(13);
+        assertEquals(13,rectangle.b);
+    }
 }
