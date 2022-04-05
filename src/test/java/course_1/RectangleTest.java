@@ -18,14 +18,21 @@ public class RectangleTest {
     @Test
     public void testGetArea(){
         assertEquals(20,rectangle.getArea());
+        assertThrows(RectangleException.class,()->new Rectangle(-3,8).getArea());
+        assertThrows(RectangleException.class,()->new Rectangle(4,-10).getArea());
     }
     @Test
     public void testgetPerimetr(){
         assertEquals(18,rectangle.getPerimeter());
+        assertThrows(RectangleException.class,()->new Rectangle(-4,5).getPerimeter());
+        assertThrows(RectangleException.class,()->new Rectangle(4,-5).getPerimeter());
     }
     @Test
-    public void testisSquare(){
+    public void testisSquare() throws RectangleException {
         assertEquals(false,rectangle.isSquare());
+        assertEquals(true,new Rectangle(4,4).isSquare());
+        assertThrows(RectangleException.class,()->new Rectangle(-4,5).isSquare());
+        assertThrows(RectangleException.class,()->new Rectangle(4,-5).isSquare());
     }
     @Test
     public void testException(){
@@ -39,4 +46,15 @@ public class RectangleTest {
             new Rectangle(4,-5);
         } );
     }
+    @Test
+    public void testGetA() throws RectangleException {
+        assertEquals(5,new Rectangle(5,6).getA());
+        assertThrows(RectangleException.class,()->new Rectangle(-4,5).getA());
+    }
+    @Test
+    public void testGetB() throws RectangleException {
+        assertEquals(6,new Rectangle(5,6).getB());
+        assertThrows(RectangleException.class,()->new Rectangle(4,-5).getB());
+    }
+
 }
