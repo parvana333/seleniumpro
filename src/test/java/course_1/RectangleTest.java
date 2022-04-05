@@ -12,12 +12,12 @@ public class RectangleTest {
 
     @BeforeEach
     public void setup() throws RectangleException {
-     rectangle=new Rectangle(4,5);
+     rectangle=new Rectangle(4.0,5.0);
     }
 
     @Test
     public void testGetArea(){
-        assertEquals(20,rectangle.getArea());
+        assertEquals(20.0,rectangle.getArea());
         assertThrows(RectangleException.class,()->new Rectangle(-3,8).getArea());
         assertThrows(RectangleException.class,()->new Rectangle(4,-10).getArea());
         assertThrows(RectangleException.class,()->new Rectangle(0,8).getArea());
@@ -25,7 +25,7 @@ public class RectangleTest {
     }
     @Test
     public void testgetPerimetr(){
-        assertEquals(18,rectangle.getPerimeter());
+        assertEquals(18.0,rectangle.getPerimeter());
         assertThrows(RectangleException.class,()->new Rectangle(-4,5).getPerimeter());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).getPerimeter());
         assertThrows(RectangleException.class,()->new Rectangle(0,8).getPerimeter());
@@ -43,7 +43,7 @@ public class RectangleTest {
     @Test
     public void testException(){
         assertThrows(RectangleException.class, () ->{
-           new Rectangle(-4,5);
+           new Rectangle(-4.0,5.0);
         },"a parameter has to be positive, got: -4.0" );
 
     }
@@ -61,23 +61,23 @@ public class RectangleTest {
     }
     @Test
     public void testGetA() throws RectangleException {
-        assertEquals(5,new Rectangle(5,6).getA());
+        assertEquals(5.0,new Rectangle(5.0,6.0).getA());
         assertThrows(RectangleException.class,()->new Rectangle(-4,5).getA());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).getA());
     }
     @Test
     public void testGetB() throws RectangleException {
-        assertEquals(6,new Rectangle(5,6).getB());
+        assertEquals(6.0,new Rectangle(5.0,6.0).getB());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).getB());
     }
     @Test
     public void testSetA(){
-        rectangle.setA(12);
-        assertEquals(12,rectangle.a);
+        rectangle.setA(12.0);
+        assertEquals(12.0,rectangle.a);
     }
     @Test
     public void testSetB(){
-        rectangle.setB(13);
-        assertEquals(13,rectangle.b);
+        rectangle.setB(13.0);
+        assertEquals(13.0,rectangle.b);
     }
 }
