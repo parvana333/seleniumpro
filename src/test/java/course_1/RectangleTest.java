@@ -77,7 +77,7 @@ public class RectangleTest {
     }
     @Test
     public void testSetB(){
-        rectangle.setA(13);
+        rectangle.setB(13);
         assertEquals(13,rectangle.b);
     }
 }
