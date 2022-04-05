@@ -20,12 +20,16 @@ public class RectangleTest {
         assertEquals(20,rectangle.getArea());
         assertThrows(RectangleException.class,()->new Rectangle(-3,8).getArea());
         assertThrows(RectangleException.class,()->new Rectangle(4,-10).getArea());
+        assertThrows(RectangleException.class,()->new Rectangle(0,8).getArea());
+        assertThrows(RectangleException.class,()->new Rectangle(4,0).getArea());
     }
     @Test
     public void testgetPerimetr(){
         assertEquals(18,rectangle.getPerimeter());
         assertThrows(RectangleException.class,()->new Rectangle(-4,5).getPerimeter());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).getPerimeter());
+        assertThrows(RectangleException.class,()->new Rectangle(0,8).getPerimeter());
+        assertThrows(RectangleException.class,()->new Rectangle(4,0).getPerimeter());
     }
     @Test
     public void testisSquare() throws RectangleException {
@@ -33,17 +37,26 @@ public class RectangleTest {
         assertEquals(true,new Rectangle(4,4).isSquare());
         assertThrows(RectangleException.class,()->new Rectangle(-4,5).isSquare());
         assertThrows(RectangleException.class,()->new Rectangle(4,-5).isSquare());
+        assertThrows(RectangleException.class,()->new Rectangle(0,5).isSquare());
+        assertThrows(RectangleException.class,()->new Rectangle(4,0).isSquare());
     }
     @Test
     public void testException(){
         assertThrows(RectangleException.class, () ->{
            new Rectangle(-4,5);
         },"a parameter has to be positive, got: -4.0" );
+
     }
     @Test
     public void testException2(){
         assertThrows(RectangleException.class, () ->{
             new Rectangle(4,-5);
+        } );
+        assertThrows(RectangleException.class, () ->{
+            new Rectangle(0,-5);
+        } );
+        assertThrows(RectangleException.class, () ->{
+            new Rectangle(4,0);
         } );
     }
     @Test
