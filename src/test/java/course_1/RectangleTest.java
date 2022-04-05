@@ -50,6 +50,7 @@ public class RectangleTest {
     public void testGetA() throws RectangleException {
         assertEquals(5,new Rectangle(5,6).getA());
         assertThrows(RectangleException.class,()->new Rectangle(-4,5).getA());
+        assertThrows(RectangleException.class,()->new Rectangle(4,-5).getA());
     }
     @Test
     public void testGetB() throws RectangleException {
