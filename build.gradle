@@ -18,17 +18,25 @@ repositories {
 test {
     finalizedBy jacocoTestReport
     useJUnitPlatform()
+    testLogging {
+        outputs.upToDateWhen {false}
+
+
+    }
 }
 jacocoTestReport {
     dependsOn test
 }
 dependencies {
-    // Use JUnit test framework.
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:29.0-jre'
+    implementation('junit:junit:4.12')
+    implementation('org.seleniumhq.selenium:selenium-java:2.52.0')
+    implementation('org.seleniumhq.selenium:selenium-chrome-driver:2.23.0')
+    implementation('io.github.bonigarcia:webdrivermanager:4.3.1')
+    // https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.8.2'
+
+
 }
 
 application {
